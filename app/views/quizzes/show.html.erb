@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Possible date:</strong>
+  <%= @quiz.possible_date %>
+</p>
+
+<p>
+  <strong>Idea:</strong>
+  <%= @quiz.idea %>
+</p>
+
+<p>
+  <strong>Possible places:</strong>
+  <%= @quiz.possible_places %>
+</p>
+
+<p>
+  <strong>Max assistance:</strong>
+  <%= @quiz.max_assistance %>
+</p>
+
+<p>
+  <strong>Min assistance:</strong>
+  <%= @quiz.min_assistance %>
+</p>
+
+<p>
+  <strong>Max cost:</strong>
+  <%= @quiz.max_cost %>
+</p>
+
+<p>
+  <strong>Min cost:</strong>
+  <%= @quiz.min_cost %>
+</p>
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>

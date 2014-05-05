@@ -1,0 +1,53 @@
+<%= form_for(@idea) do |f| %>
+  <% if @idea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+
+      <ul>
+      <% @idea.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :possible_places %><br>
+    <%= f.text_field :possible_places %>
+  </div>
+  <div class="field">
+    <%= f.label :max_assistance %><br>
+    <%= f.number_field :max_assistance %>
+  </div>
+  <div class="field">
+    <%= f.label :min_assistance %><br>
+    <%= f.number_field :min_assistance %>
+  </div>
+  <div class="field">
+    <%= f.label :possible_dates %><br>
+    <%= f.text_field :possible_dates %>
+  </div>
+  <div class="field">
+    <%= f.label :creation_date %><br>
+    <%= f.date_select :creation_date %>
+  </div>
+  <div class="field">
+    <%= f.label :max_cost %><br>
+    <%= f.text_field :max_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :min_cost %><br>
+    <%= f.text_field :min_cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

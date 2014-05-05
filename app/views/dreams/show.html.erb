@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dream.description %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @dream.title %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @dream.place %>
+</p>
+
+<p>
+  <strong>Max assistance:</strong>
+  <%= @dream.max_assistance %>
+</p>
+
+<p>
+  <strong>Min assistance:</strong>
+  <%= @dream.min_assistance %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @dream.event_date %>
+</p>
+
+<p>
+  <strong>Event value:</strong>
+  <%= @dream.event_value %>
+</p>
+
+<%= link_to 'Edit', edit_dream_path(@dream) %> |
+<%= link_to 'Back', dreams_path %>

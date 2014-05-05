@@ -1,0 +1,37 @@
+<h1>Listing quizzes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Possible date</th>
+      <th>Idea</th>
+      <th>Possible places</th>
+      <th>Max assistance</th>
+      <th>Min assistance</th>
+      <th>Max cost</th>
+      <th>Min cost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quizzes.each do |quiz| %>
+      <tr>
+        <td><%= quiz.possible_date %></td>
+        <td><%= quiz.idea %></td>
+        <td><%= quiz.possible_places %></td>
+        <td><%= quiz.max_assistance %></td>
+        <td><%= quiz.min_assistance %></td>
+        <td><%= quiz.max_cost %></td>
+        <td><%= quiz.min_cost %></td>
+        <td><%= link_to 'Show', quiz %></td>
+        <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
+        <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quiz', new_quiz_path %>

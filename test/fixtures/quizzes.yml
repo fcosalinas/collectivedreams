@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  possible_date: 
+  idea: 
+  possible_places: 
+  max_assistance: 1
+  min_assistance: 1
+  max_cost: 
+  min_cost: 
+
+two:
+  possible_date: 
+  idea: 
+  possible_places: 
+  max_assistance: 1
+  min_assistance: 1
+  max_cost: 
+  min_cost: 

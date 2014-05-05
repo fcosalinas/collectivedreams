@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dream: 
+  user: 
+  payment_date: 2014-05-05
+  amount: 
+  instalments: 1
+
+two:
+  dream: 
+  user: 
+  payment_date: 2014-05-05
+  amount: 
+  instalments: 1

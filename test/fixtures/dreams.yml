@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  title: MyString
+  place: MyString
+  max_assistance: 1
+  min_assistance: 1
+  event_date: 2014-05-05
+  event_value: 
+
+two:
+  description: MyString
+  title: MyString
+  place: MyString
+  max_assistance: 1
+  min_assistance: 1
+  event_date: 2014-05-05
+  event_value: 

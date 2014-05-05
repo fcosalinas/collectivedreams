@@ -1,0 +1,45 @@
+<%= form_for(@quiz) do |f| %>
+  <% if @quiz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
+
+      <ul>
+      <% @quiz.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :possible_date %><br>
+    <%= f.text_field :possible_date %>
+  </div>
+  <div class="field">
+    <%= f.label :idea %><br>
+    <%= f.text_field :idea %>
+  </div>
+  <div class="field">
+    <%= f.label :possible_places %><br>
+    <%= f.text_field :possible_places %>
+  </div>
+  <div class="field">
+    <%= f.label :max_assistance %><br>
+    <%= f.number_field :max_assistance %>
+  </div>
+  <div class="field">
+    <%= f.label :min_assistance %><br>
+    <%= f.number_field :min_assistance %>
+  </div>
+  <div class="field">
+    <%= f.label :max_cost %><br>
+    <%= f.text_field :max_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :min_cost %><br>
+    <%= f.text_field :min_cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
