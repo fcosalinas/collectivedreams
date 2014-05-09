@@ -7,7 +7,7 @@ class CreateDreams < ActiveRecord::Migration
       t.integer :max_assistance
       t.integer :min_assistance
       t.date :event_date
-      t.float :event_value
+      t.float :event_cost
 
       t.timestamps
     end
