@@ -5,9 +5,16 @@
     <title>Sueños Colectivos | Home</title>
   </head>
   <body>
-    <h1>Vista de prueba</h1>
-    <p>
-      Esta es la página de inicio
-    </p>
+    <div class="center hero-unit">
+      <h1>Bienvenidos</h1>
+      <h2>Esta es la página de inicio de <a href="http://emol.com/">Suenhos Colectivos</a></h2>
+
+    	<%= link_to "Registrate", '#', class: "btn btn-large btn-primary" %>
+
+      <div>
+        <%= link_to image_tag("prueba.png", alt: "Rails", :width => 100, :height => 64), 'http://www.emol.com/' %>
+      </div>
+
+    </div>
   </body>
 </html>
