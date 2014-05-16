@@ -2,13 +2,12 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <%= link_to "Sueños Colectivos", '#', id: "logo" %>
+          <%= link_to "Sueños Colectivos", home_path, id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Inicio",    static_pages_home_path %></li>
-              <li><%= link_to "Ayuda",    static_pages_help_path %></li>
-              <li><%= link_to "Acerca",    static_pages_about_path %></li>
-              <li><%= link_to "Inicia Sesion", '#' %></li>
+              <li><%= link_to "Inicio", home_path %></li>
+              <li><%= link_to "Ayuda", help_path %></li>
+              <li><%= link_to "Inicia Sesion", signup_path %></li>
             </ul>
           </nav>
         </div>
