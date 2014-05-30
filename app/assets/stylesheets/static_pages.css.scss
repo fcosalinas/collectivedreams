@@ -1,0 +1,20 @@
+// Place all the styles related to the StatisPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.first-list {
+    float: left;
+    margin-left: 20px;
+}
+
+.next-list {
+	float:left;
+}
+
+.list_canvas{
+	display: block;
+  	width: 100%;
+  	min-height: 28px;        // Make inputs at least the height of their button counterpart
+  	box-sizing: border-box;
+}

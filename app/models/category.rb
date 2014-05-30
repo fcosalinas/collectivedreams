@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
 
-	attr_accessor :description
+	#attr_accessor :description
 end

@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509191629) do
+ActiveRecord::Schema.define(version: 20140520225434) do
 
   create_table "categories", force: true do |t|
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "dream_categories", force: true do |t|
+    t.integer  "dream_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dream_categories", ["category_id"], name: "index_dream_categories_on_category_id"
+  add_index "dream_categories", ["dream_id"], name: "index_dream_categories_on_dream_id"
 
   create_table "dream_likes", force: true do |t|
     t.integer  "dream_id"
@@ -36,10 +46,20 @@ ActiveRecord::Schema.define(version: 20140509191629) do
     t.integer  "max_assistance"
     t.integer  "min_assistance"
     t.date     "event_date"
-    t.float    "event_value"
+    t.float    "event_cost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "idea_categories", force: true do |t|
+    t.integer  "idea_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "idea_categories", ["category_id"], name: "index_idea_categories_on_category_id"
+  add_index "idea_categories", ["idea_id"], name: "index_idea_categories_on_idea_id"
 
   create_table "idea_likes", force: true do |t|
     t.integer  "idea_id"
@@ -48,6 +68,7 @@ ActiveRecord::Schema.define(version: 20140509191629) do
     t.datetime "updated_at"
   end
 
+  add_index "idea_likes", ["idea_id"], name: "index_idea_likes_on_idea_id"
   add_index "idea_likes", ["user_id"], name: "index_idea_likes_on_user_id"
 
   create_table "idea_tags", force: true do |t|

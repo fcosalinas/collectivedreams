@@ -25,6 +25,8 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(idea_params)
+    @idea.creation_date = DateTime.now
+
 
     respond_to do |format|
       if @idea.save

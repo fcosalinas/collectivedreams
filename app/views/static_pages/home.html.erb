@@ -1,15 +1,30 @@
 <% provide(:title, 'Inicio') %>
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sueños Colectivos | Home</title>
-  </head>
   <body>
     <div class="center hero-unit">
       <h1>Bienvenidos</h1>
       <h2>Esta es la página de inicio de <a href="http://emol.com/">Suenhos Colectivos</a></h2>
 
-    	<%= link_to "Registrate", signup_path, class: "btn btn-large btn-primary" %>
+
+      <div class="center">
+        <%= link_to "Registrate", signup_path, class: "btn btn-large btn-primary" %>
+        <%= link_to "Postula tu idea", new_idea_path, class: "btn btn-large btn-primary" %>
+      </div>
+
+      <div class="list_canvas center hero-unit">
+        <div class="category_list first-list">
+        <%=  @categories = Category.all 
+
+          select_tag "category_list[]", options_from_collection_for_select(@categories, "id", "description") %>
+        </div>
+        <div class="idea_list next-list">
+        <%=  @ideas = Idea.all 
+        
+          select_tag "idea_list[]", options_from_collection_for_select(@ideas, "id", "description"), :onchange => idea_path("seleccionar id") %>
+        </div>        
+      </div>
+
 
       <div>
         <%= link_to image_tag("prueba.png", alt: "Rails", :width => 100, :height => 64), 'http://www.emol.com/' %>
