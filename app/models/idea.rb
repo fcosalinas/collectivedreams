@@ -1,9 +1,10 @@
 class Idea < ActiveRecord::Base
 
 	 belongs_to :user
-	 has_one :quiz
+	 has_many :quiz
 	 has_many :idea_like
-	 has_many :tags
+	 has_many :idea_tag
+	 has_many :tags, :through => :idea_tag
 	 has_many :idea_category
 	 has_many :categories, :through => :idea_category
 

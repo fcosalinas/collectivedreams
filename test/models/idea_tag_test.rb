@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class IdeaTagsTest < ActiveSupport::TestCase
+class IdeaTagTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

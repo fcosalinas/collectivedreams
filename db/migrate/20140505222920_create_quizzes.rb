@@ -3,6 +3,8 @@ class CreateQuizzes < ActiveRecord::Migration
     create_table :quizzes do |t|
       t.string :possible_date, array: true, default:[]
       t.references :idea
+      t.references :user
+      t.references :dream
       t.string :possible_places, array: true, default:[]
       t.integer :max_assistance
       t.integer :min_assistance

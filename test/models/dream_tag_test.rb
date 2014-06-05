@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DreamLikesTest < ActiveSupport::TestCase
+class DreamTagTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
