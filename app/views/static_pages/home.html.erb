@@ -27,14 +27,14 @@
                 <%=  @categories = Category.all 
 
                 select_tag "category_list[]", options_from_collection_for_select(@categories, "id", "description") %>
-                <%= link_to "Buscar", '#', class: "btn btn-sm btn-info" %>
+                <%= link_to "Ver por categoría", '#', class: "btn btn-sm btn-info" %>
               </div> 
             </td>
             <td>
               <div class="center">
                 <%=  @ideas = Idea.all         
                  select_tag "idea_list[]", options_from_collection_for_select(@ideas, "id", "title"), :onchange => idea_path("seleccionar id") %>
-                 <%= link_to "Buscar", '#', class: "btn btn-sm btn-info" %>
+                 <%= link_to "Ver idea", '#', class: "btn btn-sm btn-info" %>
               </div>
             </td> 
           </tr>
