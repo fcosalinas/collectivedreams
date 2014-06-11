@@ -6,37 +6,48 @@
       <h1>Bienvenidos</h1>
       <h2>Esta es la página de inicio de <a href="http://emol.com/">Sueños Colectivos</a></h2>
 
-
       <div class="center">
-        <%= link_to "Regístrate", signup_path, class: "btn btn-large btn-primary" %>
-        <%= link_to "Postula tu idea", new_idea_path, class: "btn btn-large btn-primary" %>
-      </div>
+        <%= form_tag("#", method: "get") do %>
+          <%= text_field_tag(:q, nil, class: 'form-control input-lg') %>
+          <%= submit_tag("Busca tu idea o sueño", :class => "btn btn-xs btn-info") %>
+        <% end %>
+      </div>      
 
-      <div class="hero-unit table-responsive">
+      <h2>O busca por: </h2>
+
+      <div class="table-responsive">
         <table class="table table-bordered center">
           <tr>
-            <td>Categorías</td>
-            <td>Ideas</td> 
+            <td><h2>Categoría</h2></td>
+            <td><h2>Idea</h2></td> 
           </tr>
           <tr>
             <td>
-              <div class="">
+              <div class="center">
                 <%=  @categories = Category.all 
 
                 select_tag "category_list[]", options_from_collection_for_select(@categories, "id", "description") %>
+                <%= link_to "Buscar", '#', class: "btn btn-sm btn-info" %>
               </div> 
             </td>
             <td>
-              <div class="">
+              <div class="center">
                 <%=  @ideas = Idea.all         
-                 select_tag "idea_list[]", options_from_collection_for_select(@ideas, "id", "description"), :onchange => idea_path("seleccionar id") %>
+                 select_tag "idea_list[]", options_from_collection_for_select(@ideas, "id", "title"), :onchange => idea_path("seleccionar id") %>
+                 <%= link_to "Buscar", '#', class: "btn btn-sm btn-info" %>
               </div>
             </td> 
           </tr>
         </table>
       </div>
       <div>
-        <%= link_to image_tag("prueba.png", alt: "Rails", :width => 100, :height => 64), home_path %>
+
+      <div class="center">
+        <%= link_to "Regístrate", signup_path, class: "btn btn-large btn-primary" %>
+        <%= link_to "Postula tu idea", new_idea_path, class: "btn btn-large btn-primary" %>
+      </div>
+
+        <%= link_to image_tag("logo.png", alt: "Rails", :width => 100, :height => 64), home_path %>
       </div>
 
     </div>
