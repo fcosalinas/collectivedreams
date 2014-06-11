@@ -12,22 +12,31 @@
         <%= link_to "Postula tu idea", new_idea_path, class: "btn btn-large btn-primary" %>
       </div>
 
-      <div class="list_canvas center hero-unit">
-        <div class="category_list first-list">
-        <%=  @categories = Category.all 
+      <div class="hero-unit table-responsive">
+        <table class="table table-bordered center">
+          <tr>
+            <td>Categorías</td>
+            <td>Ideas</td> 
+          </tr>
+          <tr>
+            <td>
+              <div class="">
+                <%=  @categories = Category.all 
 
-          select_tag "category_list[]", options_from_collection_for_select(@categories, "id", "description") %>
-        </div>
-        <div class="idea_list next-list">
-        <%=  @ideas = Idea.all 
-        
-          select_tag "idea_list[]", options_from_collection_for_select(@ideas, "id", "description"), :onchange => idea_path("seleccionar id") %>
-        </div>        
+                select_tag "category_list[]", options_from_collection_for_select(@categories, "id", "description") %>
+              </div> 
+            </td>
+            <td>
+              <div class="">
+                <%=  @ideas = Idea.all         
+                 select_tag "idea_list[]", options_from_collection_for_select(@ideas, "id", "description"), :onchange => idea_path("seleccionar id") %>
+              </div>
+            </td> 
+          </tr>
+        </table>
       </div>
-
-
       <div>
-        <%= link_to image_tag("prueba.png", alt: "Rails", :width => 100, :height => 64), 'http://www.emol.com/' %>
+        <%= link_to image_tag("prueba.png", alt: "Rails", :width => 100, :height => 64), home_path %>
       </div>
 
     </div>
