@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605222715) do
+ActiveRecord::Schema.define(version: 20140712003902) do
 
   create_table "categories", force: true do |t|
     t.string   "description"
@@ -108,6 +108,8 @@ ActiveRecord::Schema.define(version: 20140605222715) do
   create_table "quizzes", force: true do |t|
     t.string   "possible_date",   default: "--- []\n"
     t.integer  "idea_id"
+    t.integer  "user_id"
+    t.integer  "dream_id"
     t.string   "possible_places", default: "--- []\n"
     t.integer  "max_assistance"
     t.integer  "min_assistance"
@@ -150,6 +152,11 @@ ActiveRecord::Schema.define(version: 20140605222715) do
     t.date     "birth_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
+    t.string   "password_digest"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end

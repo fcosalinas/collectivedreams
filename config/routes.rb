@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :quizzes
 
   resources :categories
@@ -32,6 +34,10 @@ Rails.application.routes.draw do
   match '/about', to: 'static_pages#about', via: 'get'
 
   match '/contact', to: 'static_pages#contact', via: 'get'
+
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

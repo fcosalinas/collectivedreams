@@ -20,9 +20,9 @@ DreamLike.delete_all
 Sale.delete_all
 
 
-default_user1 = User.create(first_name: "Default", last_name: "User", email: "default@sueñoscolectivos.cl")
-default_user2 = User.create(first_name: "Esteban", last_name: "Calvo", email: "estebancalv@hotmail.com")
-default_user3 = User.create(first_name: "Carlos", last_name: "Maturana", email: "cmaturana@gmail.com")
+default_user1 = User.create(first_name: "Default", last_name: "User", email: "default@sueñoscolectivos.cl", password: "jajeji")
+default_user2 = User.create(first_name: "Esteban", last_name: "Calvo", email: "estebancalv@hotmail.com", password: "jajeji")
+default_user3 = User.create(first_name: "Carlos", last_name: "Maturana", email: "cmaturana@gmail.com", password: "jajeji")
 default_idea1 = Idea.create(title: "Asado con ColoColo", description: "Asado con el primer equipo de Colo-Colo", max_assistance: 22, min_assistance: 11, creation_date: DateTime.now)
 default_idea2 = Idea.create(title: "Cirque du soleil a concepcion", description: "Una visita de parte del Cirque du Soleil a la ciudad de Concepción", max_assistance: 22, min_assistance: 11, creation_date: DateTime.now)
 default_idealike1 = IdeaLike.create(user_id: default_user1.id, idea_id: default_idea1.id)

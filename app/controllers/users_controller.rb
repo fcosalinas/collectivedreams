@@ -1,3 +1,4 @@
+# encoding: UTF-8
   class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -28,7 +29,9 @@
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        sign_in @user
+        flash[:success] = "Bienvenido a Sueños Colectivos"
+        format.html { redirect_to @user, notice: 'Usuario creado exitosamente' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -69,6 +72,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :birth_date)
+      params.require(:user).permit(:first_name, :last_name, :email, :birth_date, :password)
     end
 end

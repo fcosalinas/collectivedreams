@@ -1,5 +1,6 @@
 <% provide(:title, 'Inicio') %>
 <!DOCTYPE html>
+
 <html>
   <body>
     <div class="center hero-unit">
@@ -27,13 +28,30 @@
                 <%=  @categories = Category.all 
 
                 select_tag "category_list[]", options_from_collection_for_select(@categories, "id", "description") %>
-                <%= link_to "Ver por categoría", '#', class: "btn btn-sm btn-info" %>
+
+                      <SCRIPT TYPE="text/javascript"> 
+                      function filterIdeas(){
+                        idea_list = document.getElementById('idea_list_');
+                        category_list = document.getElementById('category_list_');
+                        if (idea_list == null) return;
+                        if (idea_list.options == null) return;
+                        idea_list.options.length = 0; 
+                        categoryid = category_list.value;  
+
+                          <% IdeaCategory.all.each do |ideacategory| 
+                          @a = []
+                          @a << [ideacategory.idea_id, ideacategory.category_id]
+                        end %>                              
+                        
+                      }
+                      </SCRIPT>
+                <%= link_to "Ver por categoría", '#', class: "btn btn-sm btn-info", :onclick=> 'filterIdeas()' %>
               </div> 
             </td>
             <td>
               <div class="center">
-                <%=  @ideas = Idea.all         
-                 select_tag "idea_list[]", options_from_collection_for_select(@ideas, "id", "title"), :onchange => idea_path("seleccionar id") %>
+                <%=  @ideas = Idea.all    
+                 select_tag "idea_list[]", options_from_collection_for_select(@ideas, "id", "title") %>
                  <%= link_to "Ver idea", '#', class: "btn btn-sm btn-info" %>
               </div>
             </td> 

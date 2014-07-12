@@ -12,20 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br>
+    <%= f.label :first_name, 'Nombre' %><br>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
+    <%= f.label :last_name, 'Apellido' %><br>
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :email, 'Email' %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
+    <%= f.label :password, 'Contraseña' %><br>
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, 'Confirma tu contraseña' %><br>
+    <%= f.text_field :password_confirmation %>
+  </div>
+  <div class="field">
     <%= f.label :birth_date %><br>
-    <%= f.date_select :birth_date %>
+    <%= f.date_select :birth_date, start_year: 1900 %>
   </div>
   <div class="actions">
     <%= f.submit 'Registrarse' %>
