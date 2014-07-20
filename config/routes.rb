@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :producer_companies
+
   get 'static_pages/home'
 
   get 'static_pages/help'
@@ -22,6 +24,8 @@ Rails.application.routes.draw do
   resources :dreams
 
   resources :ideas
+
+  resources :producer_types
 
   get "/ideas/:id/give_like " => "ideas#give_like", :as => 'give_like' 
 

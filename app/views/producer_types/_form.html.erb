@@ -1,0 +1,21 @@
+<%= form_for(@producer_type) do |f| %>
+  <% if @producer_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@producer_type.errors.count, "error") %> prohibited this producer_type from being saved:</h2>
+
+      <ul>
+      <% @producer_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

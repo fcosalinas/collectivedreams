@@ -72,6 +72,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :birth_date, :password)
+      params.require(:user).permit(:first_name, :last_name, :email, :birth_date, :password, :is_admin, :producer_type)
     end
 end

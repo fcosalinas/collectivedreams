@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @producer_company.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @producer_company.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @producer_company.phone %>
+</p>
+
+<p>
+  <strong>Dueño</strong>
+  <%= User.find_by_id(@producer_company.user_id).full_name %>
+</p>
+
+<%= link_to 'Edit', edit_producer_company_path(@producer_company) %> |
+<%= link_to 'Back', producer_companies_path %>

@@ -35,6 +35,17 @@
     <%= f.label :birth_date %><br>
     <%= f.date_select :birth_date, start_year: 1900 %>
   </div>
+  <div class="field">
+    <%= f.label :is_admin, "Administrador" %><br>
+    <%= f.check_box :is_admin %>
+  </div>
+  <% @producer_types = ProducerType.all %>
+  <div class="field">
+    <%= f.label :producer_type, "Tipo productora" %><br>
+    <%= f.select :producer_type, options_from_collection_for_select(@producer_types, "id", "tipo") %>
+  </div>
+
+                
   <div class="actions">
     <%= f.submit 'Registrarse' %>
   </div>

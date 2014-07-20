@@ -20,5 +20,33 @@
   <%= @user.birth_date %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<p>
+  <strong>Administrador</strong>
+  <% if @user.is_admin? %>
+  Si
+  <% else %>
+  No
+  <% end %>
+</p>
+
+<p>
+  <strong>Productora</strong>
+  <% if ProducerCompany.find_by_user_id(@user.id) %>  
+  		<%= ProducerCompany.find_by_user_id(@user.id).name %>
+  <% else %>
+  N/A
+  <% end %>
+</p>
+
+<p>
+  <strong>Tipo Productora</strong>
+  <% if ProducerType.find_by_id(@user.producer_type) %>  
+      <%= ProducerType.find_by_id(@user.producer_type).tipo %>
+  <% else %>
+  N/A
+  <% end %>
+</p>
+<% if current_user.is_admin %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
 <%= link_to 'Back', users_path %>
