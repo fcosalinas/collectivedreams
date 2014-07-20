@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   resources :ideas
 
+  get "/ideas/:id/give_like " => "ideas#give_like", :as => 'give_like' 
+
   match '/', to: 'static_pages#home', via: 'get'
 
   match '/home', to: 'static_pages#home', via: 'get'

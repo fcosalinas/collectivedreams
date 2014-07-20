@@ -1,33 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @idea.description %>
-</p>
-
-<p>
-  <strong>Title:</strong>
+  <strong>Idea:</strong>
   <%= @idea.title %>
 </p>
 
 <p>
-  <strong>Possible places:</strong>
+  <strong>Descripcion:</strong>
+  <%= @idea.description %>
+</p>
+
+<p>
+  <strong>Lugar:</strong>
   <%= @idea.possible_places %>
-</p>
-
-<p>
-  <strong>Max assistance:</strong>
-  <%= @idea.max_assistance %>
-</p>
-
-<p>
-  <strong>Min assistance:</strong>
-  <%= @idea.min_assistance %>
-</p>
-
-<p>
-  <strong>Possible dates:</strong>
-  <%= @idea.possible_dates %>
 </p>
 
 <p>
@@ -35,15 +20,5 @@
   <%= @idea.creation_date %>
 </p>
 
-<p>
-  <strong>Max cost:</strong>
-  <%= @idea.max_cost %>
-</p>
-
-<p>
-  <strong>Min cost:</strong>
-  <%= @idea.min_cost %>
-</p>
-
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+<%= link_to 'Editar', edit_idea_path(@idea) %> |
+<%= link_to 'Atrás', ideas_path %>

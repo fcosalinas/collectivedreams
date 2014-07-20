@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title, "Título" %><br>
+    <%= f.label :title, "Idea" %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
@@ -21,30 +21,10 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :possible_places, "Lugares postulados" %><br>
+    <%= f.label :possible_places, "Lugar" %><br>
     <%= f.text_field :possible_places %>
   </div>
-  <div class="field">
-    <%= f.label :max_assistance, "Asistencia máxima" %><br>
-    <%= f.number_field :max_assistance %>
-  </div>
-  <div class="field">
-    <%= f.label :min_assistance, "Asistencia mínima" %><br>
-    <%= f.number_field :min_assistance %>
-  </div>
-  <div class="field">
-    <%= f.label :possible_dates, "Fechas postuladas" %><br>
-    <%= f.date_field :possible_dates %>
-  </div>
-  <div class="field">
-    <%= f.label :max_cost, "Costo máximo" %><br>
-    <%= f.number_field :max_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :min_cost, "Costo mínimo" %><br>
-    <%= f.number_field :min_cost %>
-  </div>
   <div class="actions">
-    <%= f.submit "Postular" %>
+    <%= f.submit "Crear" %>
   </div>
 <% end %>

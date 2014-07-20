@@ -7,6 +7,17 @@ class IdeasController < ApplicationController
     @ideas = Idea.all
   end
 
+  def give_like
+
+    @idea = Idea.find_by_id(params[:id])
+    IdeaLike.create(:idea_id => @idea.id, :user => current_user)
+
+    respond_to do |format|
+      format.html { redirect_to @idea, notice: 'Has dado un Like a esta idea' }
+      format.json { head :no_content }
+    end
+  end
+
   # GET /ideas/1
   # GET /ideas/1.json
   def show
