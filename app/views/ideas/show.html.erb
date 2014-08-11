@@ -20,5 +20,17 @@
   <%= @idea.creation_date %>
 </p>
 
+<p>
+<div>
+	<%= link_to 'Postular a licitación', new_tender_path(:idea_id => @idea.id, :producer_company_id => ProducerCompany.find_by_user_id(current_user.id).id), class: "btn" %>
+</div>
+</p>
+
+<p>
+<div>
+	<%= link_to 'Ver licitaciones', tenders_path(:idea_id => @idea.id), class: "btn" %>
+</div>
+</p>
+
 <%= link_to 'Editar', edit_idea_path(@idea) %> |
 <%= link_to 'Atrás', ideas_path %>

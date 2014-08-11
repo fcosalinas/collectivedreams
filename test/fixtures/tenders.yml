@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  producer_company_id: 
+  idea_id: 
+  place: MyString
+  price: 1.5
+  event_date: 2014-08-11
+  max_capacity: 1
+  min_capacity: 1
+
+two:
+  producer_company_id: 
+  idea_id: 
+  place: MyString
+  price: 1.5
+  event_date: 2014-08-11
+  max_capacity: 1
+  min_capacity: 1

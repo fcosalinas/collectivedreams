@@ -10,7 +10,11 @@
         <th>Descripcion</th>
         <th>Lugar</th>
         <th>Fecha creación</th>
-        <th colspan="4">Opciones</th>
+        <% if signed_in? %>            
+          <th colspan="4">Opciones</th>
+          <% else %>
+          <th colspan="3">Opciones</th>
+        <% end %>
         <th>Total de Likes</th>
       </tr>
     </thead>
@@ -29,7 +33,7 @@
           <% if signed_in? %>
             <td><%= link_to 'Like', give_like_path(:id => idea.id) %></td>
           <% end %>
-          <td><%= IdeaLike.find_by_idea_id(idea.id) %></td>
+          <td><%= IdeaLike.where(:idea_id => idea.id).size %></td>
         </tr>
       <% end %>
     </tbody>

@@ -20,5 +20,11 @@
   <%= User.find_by_id(@producer_company.user_id).full_name %>
 </p>
 
+<p>
+<div>
+	<%= link_to 'Ver DashBoard', '#', class: "btn" %>
+</div>
+</p>
+
 <%= link_to 'Edit', edit_producer_company_path(@producer_company) %> |
 <%= link_to 'Back', producer_companies_path %>

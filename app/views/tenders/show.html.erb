@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Producer company:</strong>
+  <%= @tender.producer_company.name %>
+</p>
+
+<p>
+  <strong>Idea:</strong>
+  <%= @tender.idea.title %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @tender.place %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @tender.price %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @tender.event_date %>
+</p>
+
+<p>
+  <strong>Max capacity:</strong>
+  <%= @tender.max_capacity %>
+</p>
+
+<p>
+  <strong>Min capacity:</strong>
+  <%= @tender.min_capacity %>
+</p>
+
+<%= link_to 'Edit', edit_tender_path(@tender) %> |
+<%= link_to 'Back', tenders_path %>

@@ -1,0 +1,11 @@
+<div class="navbar pull-left">
+	<h3>Tus sueños</h3>
+    <ul class="nav pull-left">
+    <% @likedIdeas = IdeaLike.where(:user_id => current_user.id) %>
+    <% @likedIdeas.each do |ideasIds| %>
+    	<p>
+    		<li> <%= link_to ideasIds.idea.title, idea_path(ideasIds.idea), class: "pull-left" %> </li>
+    	</p>
+    <% end %>
+    </ul>
+</div>

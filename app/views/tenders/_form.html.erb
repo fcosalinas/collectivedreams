@@ -1,0 +1,43 @@
+<%= form_for(@tender) do |f| %>
+  <% if @tender.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tender.errors.count, "error") %> prohibited this tender from being saved:</h2>
+
+      <ul>
+      <% @tender.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :producer_company_id, :value => ProducerCompany.find_by_user_id(current_user.id).id %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :idea_id, :value => params[:idea_id] %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :event_date %><br>
+    <%= f.date_select :event_date %>
+  </div>
+  <div class="field">
+    <%= f.label :max_capacity %><br>
+    <%= f.number_field :max_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :min_capacity %><br>
+    <%= f.number_field :min_capacity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

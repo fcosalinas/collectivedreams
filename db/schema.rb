@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140720215113) do
+ActiveRecord::Schema.define(version: 20140811175123) do
 
   create_table "categories", force: true do |t|
     t.string   "description"
@@ -116,16 +116,6 @@ ActiveRecord::Schema.define(version: 20140720215113) do
 
   add_index "producer_companies", ["user_id"], name: "index_producer_companies_on_user_id"
 
-  create_table "producer_company_users", force: true do |t|
-    t.integer  "producer_company_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "producer_company_users", ["producer_company_id"], name: "index_producer_company_users_on_producer_company_id"
-  add_index "producer_company_users", ["user_id"], name: "index_producer_company_users_on_user_id"
-
   create_table "producer_types", force: true do |t|
     t.string   "tipo"
     t.datetime "created_at"
@@ -161,6 +151,21 @@ ActiveRecord::Schema.define(version: 20140720215113) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tenders", force: true do |t|
+    t.integer  "producer_company_id"
+    t.integer  "idea_id"
+    t.string   "place"
+    t.float    "price"
+    t.date     "event_date"
+    t.integer  "max_capacity"
+    t.integer  "min_capacity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tenders", ["idea_id"], name: "index_tenders_on_idea_id"
+  add_index "tenders", ["producer_company_id"], name: "index_tenders_on_producer_company_id"
 
   create_table "user_quizzes", force: true do |t|
     t.integer  "user_id"
